@@ -7,9 +7,21 @@
 
 import XCTest
 @testable import Finnhub
+@testable import FinnhubSwift
 
 class FinnhubTests: XCTestCase {
 
+    private var vm: MainScreenVM!
+    
+    override func setUp() {
+        let trade = [Trade(p: 266, s: "AAPL", t: 234562, v: 10)]
+        vm = MainScreenVM()
+        vm.uniqueTrades = trade
+    }
+    
+    func test_to_varify_number_of_rows() {
+        XCTAssertEqual(vm.numberOfRows(), 1)
+    }
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }

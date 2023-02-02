@@ -15,7 +15,7 @@ class MainScreenVM {
     
     private var cellVM = [CellVM]()
     
-    private var uniqueTrades = [Trade]()
+    var uniqueTrades = [Trade]()
     
     func numberOfRows() -> Int {
         return self.uniqueTrades.count
